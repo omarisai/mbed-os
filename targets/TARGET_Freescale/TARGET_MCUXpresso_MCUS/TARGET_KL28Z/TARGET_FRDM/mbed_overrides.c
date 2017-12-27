@@ -15,7 +15,7 @@
  */
 #include "gpio_api.h"
 #include "pinmap.h"
-#include "clock_config.h"
+#include "fsl_clock_config.h"
 
 // called before main - implement here if board needs it otherwise, let
 //  the application override this if necessary

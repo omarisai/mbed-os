@@ -61,7 +61,7 @@ board: FRDM-KL28Z
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR THE CLOCKS TOOL **/
 
 #include "fsl_smc.h"
-#include "clock_config.h"
+#include "fsl_clock_config.h"
 
 /*******************************************************************************
  * Definitions
@@ -501,4 +501,3 @@ void BOARD_BootClockVLPR(void)
     /* Set SystemCoreClock variable. */
     SystemCoreClock = BOARD_BOOTCLOCKVLPR_CORE_CLOCK;
 }
-
