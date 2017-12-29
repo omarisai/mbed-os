@@ -35,7 +35,7 @@ static uart_irq_handler irq_handler;
 /* Array of UART peripheral base address. */
 static LPUART_Type *const uart_addrs[] = LPUART_BASE_PTRS;
 /* Array of LPUART bus clock frequencies */
-static clock_ip_name_t const uart_clocks[] = LPUART_CLOCK_FREQS;
+static clock_ip_name_t const uart_clocks[] = LPUART_CLOCKS;
 
 int stdio_uart_inited = 0;
 serial_t stdio_uart;

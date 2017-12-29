@@ -213,12 +213,12 @@ SysTick_Handler:
 
     .align 1
     .thumb_func
-    .weak DMA0_IRQHandler
-    .type DMA0_IRQHandler, %function
+    .weak DMA0_04_IRQHandler
+    .type DMA0_04_IRQHandler, %function
 DMA0_04_IRQHandler:
     ldr   r0,=DMA0_04_DriverIRQHandler
     bx    r0
-    .size DMA0_IRQHandler, . - DMA0_IRQHandler
+    .size DMA0_04_IRQHandler, . - DMA0_04_IRQHandler
 
     .align 1
     .thumb_func
