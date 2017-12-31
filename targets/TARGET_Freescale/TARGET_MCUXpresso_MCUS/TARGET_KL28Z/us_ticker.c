@@ -41,13 +41,17 @@ void us_ticker_init(void)
     //Common for ticker/timer
     uint32_t busClock;
 
+    /* Set the source for the LPIT module */
+    CLOCK_SetIpSrc(kCLOCK_Lpit0, kCLOCK_IpSrcSircAsync);
+
     // Structure to initialize PIT
     lpit_config_t lpitConfig;
+    lpit_chnl_params_t lpitChannelConfig;
 
     LPIT_GetDefaultConfig(&lpitConfig);
     LPIT_Init(LPIT0, &lpitConfig);
 
-    busClock = CLOCK_GetFreq(kCLOCK_BusClk);
+    busClock = CLOCK_GetIpFreq(kCLOCK_Lpit0);
 
     LPIT_SetTimerPeriod(LPIT0, kLPIT_Chnl_0, busClock / 1000000 - 1);
     LPIT_SetTimerPeriod(LPIT0, kLPIT_Chnl_1, 0xFFFFFFFF);
@@ -60,7 +64,7 @@ void us_ticker_init(void)
     lptmrConfig.prescalerClockSource = kLPTMR_PrescalerClock_0;
     LPTMR_Init(LPTMR0, &lptmrConfig);
 
-    busClock = CLOCK_GetFreq(kCLOCK_BusClk);
+    busClock = CLOCK_GetIpFreq(kCLOCK_Lptmr0);
     LPTMR_SetTimerPeriod(LPTMR0, busClock / 1000000 - 1);
     /* Set interrupt handler */
     NVIC_SetVector(LPTMR0_IRQn, (uint32_t)lptmr_isr);
