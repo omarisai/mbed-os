@@ -46,108 +46,117 @@ const PinMap PinMap_ADC[] = {
 };
 
 /************LI2C***************/
-const PinMap PinMap_I2C_SDA[] = {
-    {PTE18 , I2C_0 , 4},
-    {PTE25 , I2C_0 , 5},
-    {PTB1  , I2C_0 , 2},
-    {PTB3  , I2C_0 , 2},
-    {PTC9  , I2C_0 , 2},
-    {PTE0  , I2C_1 , 6},
-    {PTA4  , I2C_1 , 2},
-    {PTC2  , I2C_1 , 2},
-    {PTC11 , I2C_1 , 2},
-    {PTD6  , I2C_1 , 4},
-    {NC   , NC   , 0}
-};
-
-const PinMap PinMap_I2C_SCL[] = {
-    {PTE24 , I2C_0 , 5},
-    {PTB0  , I2C_0 , 2},
-    {PTB2  , I2C_0 , 2},
-    {PTC8  , I2C_0 , 2},
-    {PTE1  , I2C_1 , 6},
-    {PTA3  , I2C_1 , 2},
-    {PTC1  , I2C_1 , 2},
-    {PTC10 , I2C_1 , 2},
-    {PTD7  , I2C_1 , 4},
-    {NC   , NC   , 0}
-};
+//const PinMap PinMap_I2C_SDA[] = {
+//    {PTE18 , I2C_0 , 4},
+//    {PTE25 , I2C_0 , 5},
+//    {PTB1  , I2C_0 , 2},
+//    {PTB3  , I2C_0 , 2},
+//    {PTC9  , I2C_0 , 2},
+//    {PTE0  , I2C_1 , 6},
+//    {PTA4  , I2C_1 , 2},
+//    {PTC2  , I2C_1 , 2},
+//    {PTC11 , I2C_1 , 2},
+//    {PTD6  , I2C_1 , 4},
+//    {NC   , NC   , 0}
+//};
+//
+//const PinMap PinMap_I2C_SCL[] = {
+//    {PTE24 , I2C_0 , 5},
+//    {PTB0  , I2C_0 , 2},
+//    {PTB2  , I2C_0 , 2},
+//    {PTC8  , I2C_0 , 2},
+//    {PTE1  , I2C_1 , 6},
+//    {PTA3  , I2C_1 , 2},
+//    {PTC1  , I2C_1 , 2},
+//    {PTC10 , I2C_1 , 2},
+//    {PTD7  , I2C_1 , 4},
+//    {NC   , NC   , 0}
+//};
 
 /************LPUART***************/
 const PinMap PinMap_UART_TX[] = {
     {PTE20 , LPUART_0 , 4},
     {PTA2  , LPUART_0 , 2},
+	{PTA14 , LPUART_0 , 3},
     {PTB17 , LPUART_0 , 3},
     {PTD7  , LPUART_0 , 3},
     {PTE0  , LPUART_1 , 3},
-    {PTE30 , LPUART_1 , 5},
     {PTA19 , LPUART_1 , 3},
     {PTC4  , LPUART_1 , 3},
+	{PTE16 , LPUART_2 , 3},
+	{PTE22 , LPUART_2 , 4},
+	{PTD3  , LPUART_2 , 3},
+	{PTD5  , LPUART_2 , 3},
     {NC    , NC   , 0}
 };
 
 const PinMap PinMap_UART_RX[] = {
-    {PTE21 , LPUART_0, 4},
-    {PTA1  , LPUART_0, 2},
-    {PTB16 , LPUART_0, 3},
-    {PTD6  , LPUART_0, 3},
-    {PTE1  , LPUART_1, 3},
-    {PTA18 , LPUART_1, 3},
-    {PTC3  , LPUART_1, 3},
+    {PTE21 , LPUART_0 , 4},
+    {PTA1  , LPUART_0 , 2},
+	{PTA15 , LPUART_0 , 3},
+    {PTB16 , LPUART_0 , 3},
+    {PTD6  , LPUART_0 , 3},
+    {PTE1  , LPUART_1 , 3},
+    {PTA18 , LPUART_1 , 3},
+    {PTC3  , LPUART_1 , 3},
+	{PTE17 , LPUART_2 , 3},
+	{PTE23 , LPUART_2 , 4},
+	{PTD2  , LPUART_2 , 3},
+	{PTD4  , LPUART_2 , 3},
     {NC   ,  NC    , 0}
 };
 
 /************LSPI***************/
-const PinMap PinMap_SPI_SCLK[] = {
-    {PTE17 , SPI_0, 2},
-    {PTC5  , SPI_0, 2},
-    {PTD1  , SPI_0, 2},
-    {PTC3  , SPI_1, 2},
-    {PTD5  , SPI_1, 2},
-    {NC   , NC   , 0}
-};
+//const PinMap PinMap_SPI_SCLK[] = {
+//    {PTE17 , SPI_0, 2},
+//    {PTC5  , SPI_0, 2},
+//    {PTD1  , SPI_0, 2},
+//    {PTC3  , SPI_1, 2},
+//    {PTD5  , SPI_1, 2},
+//    {NC   , NC   , 0}
+//};
+//
+//const PinMap PinMap_SPI_MOSI[] = {
+//    {PTE18 , SPI_0, 2},
+//    {PTC6  , SPI_0, 2},
+//    {PTC7  , SPI_0, 5},
+//    {PTD2  , SPI_0, 2},
+//    {PTD3  , SPI_0, 5},
+//    {PTE1  , SPI_1, 2},
+//    {PTB0  , SPI_1, 4},
+//    {PTB1  , SPI_1, 5},
+//    {PTB16 , SPI_1, 2},
+//    {PTB17 , SPI_1, 5},
+//    {PTD6  , SPI_1, 2},
+//    {PTD7  , SPI_1, 5},
+//    {NC   , NC   , 0}
+//};
 
-const PinMap PinMap_SPI_MOSI[] = {
-    {PTE18 , SPI_0, 2},
-    {PTC6  , SPI_0, 2},
-    {PTC7  , SPI_0, 5},
-    {PTD2  , SPI_0, 2},
-    {PTD3  , SPI_0, 5},
-    {PTE1  , SPI_1, 2},
-    {PTB0  , SPI_1, 4},
-    {PTB1  , SPI_1, 5},
-    {PTB16 , SPI_1, 2},
-    {PTB17 , SPI_1, 5},
-    {PTD6  , SPI_1, 2},
-    {PTD7  , SPI_1, 5},
-    {NC   , NC   , 0}
-};
-
-const PinMap PinMap_SPI_MISO[] = {
-    {PTE18 , SPI_0, 5},
-    {PTC6  , SPI_0, 5},
-    {PTC7  , SPI_0, 2},
-    {PTD2  , SPI_0, 5},
-    {PTD3  , SPI_0, 2},
-    {PTE0  , SPI_1, 2},
-    {PTE1  , SPI_1, 5},
-    {PTB0  , SPI_1, 5},
-    {PTB1  , SPI_1, 4},
-    {PTB16 , SPI_1, 5},
-    {PTB17 , SPI_1, 2},
-    {PTD6  , SPI_1, 5},
-    {PTD7  , SPI_1, 2},
-    {NC   , NC   , 0}
-};
-
-const PinMap PinMap_SPI_SSEL[] = {
-    {PTE16 , SPI_0, 2},
-    {PTC4  , SPI_0, 2},
-    {PTD0  , SPI_0, 2},
-    {PTC4  , SPI_1, 5},
-    {PTD4  , SPI_1, 2},
-    {NC   , NC   , 0}
-};
+//const PinMap PinMap_SPI_MISO[] = {
+//    {PTE18 , SPI_0, 5},
+//    {PTC6  , SPI_0, 5},
+//    {PTC7  , SPI_0, 2},
+//    {PTD2  , SPI_0, 5},
+//    {PTD3  , SPI_0, 2},
+//    {PTE0  , SPI_1, 2},
+//    {PTE1  , SPI_1, 5},
+//    {PTB0  , SPI_1, 5},
+//    {PTB1  , SPI_1, 4},
+//    {PTB16 , SPI_1, 5},
+//    {PTB17 , SPI_1, 2},
+//    {PTD6  , SPI_1, 5},
+//    {PTD7  , SPI_1, 2},
+//    {NC   , NC   , 0}
+//};
+//
+//const PinMap PinMap_SPI_SSEL[] = {
+//    {PTE16 , SPI_0, 2},
+//    {PTC4  , SPI_0, 2},
+//    {PTD0  , SPI_0, 2},
+//    {PTC4  , SPI_1, 5},
+//    {PTD4  , SPI_1, 2},
+//    {NC   , NC   , 0}
+//};
 
 /************PWM***************/
 const PinMap PinMap_PWM[] = {

@@ -47,6 +47,8 @@ void serial_init(serial_t *obj, PinName tx, PinName rx)
     obj->serial.index = pinmap_merge(uart_tx, uart_rx);
     MBED_ASSERT((int)obj->serial.index != NC);
 
+    CLOCK_SetIpSrc(kCLOCK_Lpuart0, kCLOCK_IpSrcSircAsync);
+
     lpuart_config_t config;
 
     LPUART_GetDefaultConfig(&config);
@@ -54,7 +56,7 @@ void serial_init(serial_t *obj, PinName tx, PinName rx)
     config.enableTx = false;
     config.enableRx = false;
 
-    LPUART_Init(uart_addrs[obj->serial.index], &config, CLOCK_GetFreq(uart_clocks[obj->serial.index]));
+    LPUART_Init(uart_addrs[obj->serial.index], &config, CLOCK_GetFreq(kCLOCK_ScgSircAsyncDiv3Clk));
 
     pinmap_pinout(tx, PinMap_UART_TX);
     pinmap_pinout(rx, PinMap_UART_RX);
