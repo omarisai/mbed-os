@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include "platform/mbed_critical.h"
+#include "platform/mbed_wait_api.h"
 #include "gpio_api.h"
 #include "pinmap.h"
 #include "fsl_clock_config.h"
@@ -38,4 +40,29 @@ void NMI_Handler(void)
 {
     gpio_t gpio;
     gpio_init_in(&gpio, PTA4);
+}
+
+void mbed_die(void) {
+#if !defined (NRF51_H) && !defined(TARGET_EFM32)
+    core_util_critical_section_enter();
+#endif
+
+    gpio_t led_err; gpio_init_out(&led_err, LED1);
+    gpio_t led_green; gpio_init_out(&led_green, LED2); gpio_write(&led_green, 1);
+    gpio_t led_blue; gpio_init_out(&led_blue, LED3); gpio_write(&led_blue, 1);
+    while (1) {
+        for (int i = 0; i < 4; ++i) {
+            gpio_write(&led_err, 1);
+            wait_ms(150);
+            gpio_write(&led_err, 0);
+            wait_ms(150);
+        }
+
+        for (int i = 0; i < 4; ++i) {
+            gpio_write(&led_err, 1);
+            wait_ms(400);
+            gpio_write(&led_err, 0);
+            wait_ms(400);
+        }
+    }
 }

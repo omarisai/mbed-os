@@ -26,7 +26,6 @@
 #include "cmsis.h"
 #include "pinmap.h"
 #include "fsl_lpuart.h"
-#include "peripheral_clock_defines.h"
 #include "PeripheralPins.h"
 #include "fsl_clock_config.h"
 

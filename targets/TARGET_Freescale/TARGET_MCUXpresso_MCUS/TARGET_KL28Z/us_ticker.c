@@ -46,7 +46,6 @@ void us_ticker_init(void)
 
     // Structure to initialize PIT
     lpit_config_t lpitConfig;
-    lpit_chnl_params_t lpitChannelConfig;
 
     LPIT_GetDefaultConfig(&lpitConfig);
     LPIT_Init(LPIT0, &lpitConfig);
