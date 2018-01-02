@@ -529,6 +529,20 @@
         "release_versions": ["2"],
         "device_name": "MKL27Z64xxx4"
     },
+    "KL28Z": {
+        "inherits": ["Target"],
+        "core": "Cortex-M0+",
+        "extra_labels": ["Freescale", "MCUXpresso_MCUS", "KSDK2_MCUS", "FRDM"],
+        "macros": ["CPU_MKL28Z512VLL7", "FSL_RTOS_MBED"],
+        "supported_toolchains": ["GCC_ARM"],
+        "supported_form_factors": ["ARDUINO"],
+        "is_disk_virtual": true,
+        "default_toolchain": "ARM",
+        "device_has": ["ANALOGIN", "I2C", "I2CSLAVE", "INTERRUPTIN", "PORTIN", "PORTOUT", "PWMOUT", "RTC", "SERIAL", "SLEEP", "SPI", "SPISLAVE", "STDIO_MESSAGES"],
+        "default_lib": "std",
+        "release_versions": ["2"],
+        "device_name": "MKL28Z512xxx7"
+    },
     "KL43Z": {
         "supported_form_factors": ["ARDUINO"],
         "core": "Cortex-M0+",
