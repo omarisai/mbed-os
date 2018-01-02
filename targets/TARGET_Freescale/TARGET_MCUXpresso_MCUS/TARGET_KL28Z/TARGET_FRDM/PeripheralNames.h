@@ -30,7 +30,7 @@ typedef enum {
 typedef enum {
     LPUART_0 = 0,
     LPUART_1 = 1,
-	LPUART_2 = 2,
+    LPUART_2 = 2,
 } UARTName;
 
 #define STDIO_UART_TX     USBTX
@@ -38,8 +38,9 @@ typedef enum {
 #define STDIO_UART        LPUART_0
 
 typedef enum {
-    LI2C_0 = 0,
-    LI2C_1 = 1,
+    LPI2C_0 = 0,
+    LPI2C_1 = 1,
+    LPI2C_2 = 2,
 } I2CName;
 
 #define TPM_SHIFT   8
@@ -78,12 +79,16 @@ typedef enum {
     ADC0_SE13 = (0 << ADC_INSTANCE_SHIFT) | 13,
     ADC0_SE14 = (0 << ADC_INSTANCE_SHIFT) | 14,
     ADC0_SE15 = (0 << ADC_INSTANCE_SHIFT) | 15,
+    ADC0_SE20 = (0 << ADC_INSTANCE_SHIFT) | 20,
+    ADC0_SE21 = (0 << ADC_INSTANCE_SHIFT) | 21,
+    ADC0_SE22 = (0 << ADC_INSTANCE_SHIFT) | 22,
     ADC0_SE23 = (0 << ADC_INSTANCE_SHIFT) | 23,
 } ADCName;
 
 typedef enum {
-    LSPI_0 = 0,
-    LSPI_1 = 1,
+    LPSPI_0 = 0,
+    LPSPI_1 = 1,
+    LPSPI_2 = 2,
 } SPIName;
 
 typedef enum {

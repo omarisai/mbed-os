@@ -46,6 +46,7 @@ void serial_init(serial_t *obj, PinName tx, PinName rx)
     obj->serial.index = pinmap_merge(uart_tx, uart_rx);
     MBED_ASSERT((int)obj->serial.index != NC);
 
+    /*Set clock source for LPUART*/
     CLOCK_SetIpSrc(kCLOCK_Lpuart0, kCLOCK_IpSrcSircAsync);
 
     lpuart_config_t config;
