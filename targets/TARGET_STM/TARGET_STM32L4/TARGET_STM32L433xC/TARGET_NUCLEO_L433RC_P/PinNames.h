@@ -111,7 +111,6 @@ typedef enum {
   PC_14 = 0x2E,
   PC_15 = 0x2F,
 
-    
   PD_2  = 0x32,
 #ifdef STM32L433_100PINS // LQFP100 or UFBGA100 versions
   PD_0  = 0x30,
@@ -165,10 +164,6 @@ typedef enum {
   A3          = PC_2,
   A4          = PC_1,
   A5          = PC_0,
-    
-  A6          = PA_7,
-  A7          = PA_2,
-    
   D0          = PA_2,
   D1          = PA_3,
   D2          = PA_12,
@@ -183,18 +178,32 @@ typedef enum {
   D11         = PB_15,
   D12         = PB_14,
   D13         = PB_13,
+  D14         = PB_7,
+  D15         = PB_8,
+
+  // STDIO for console print
+#ifdef MBED_CONF_TARGET_STDIO_UART_TX
+    STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+#else
+    STDIO_UART_TX = PA_2,
+#endif
+#ifdef MBED_CONF_TARGET_STDIO_UART_RX
+    STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+#else
+    STDIO_UART_RX = PA_3,
+#endif
 
   // Generic signals namings
-  LED1        = PA_5,
-  LED2        = PA_5,
-  LED3        = PA_5,
-  LED4        = PA_5,
+  LED1        = PB_13,
+  LED2        = PB_13,
+  LED3        = PB_13,
+  LED4        = PB_13,
   USER_BUTTON = PC_13,
-  BUTTON1 = USER_BUTTON,
-  SERIAL_TX   = PA_2,
-  SERIAL_RX   = PA_3,
-  USBTX       = SERIAL_TX,
-  USBRX       = SERIAL_RX,
+  BUTTON1     = USER_BUTTON,
+  SERIAL_TX   = STDIO_UART_TX,
+  SERIAL_RX   = STDIO_UART_RX,
+  USBTX       = STDIO_UART_TX,
+  USBRX       = STDIO_UART_RX,
   I2C_SCL     = PB_8,
   I2C_SDA     = PB_7,
   SPI_MOSI    = D11,
@@ -203,7 +212,7 @@ typedef enum {
   SPI_CS      = D10,
   PWM_OUT     = D9,
 
-  //USB pins
+  // USB pins
   USB_DM = PA_11,
   USB_DP = PA_12,
   USB_NOE = PA_13,
